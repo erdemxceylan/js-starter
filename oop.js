@@ -1,8 +1,8 @@
-class House {
-   constructor(numberOfRooms, floor, location, monthlyFee, price) {
+export default class House {
+   constructor(numberOfRooms, floor, view, monthlyFee, price) {
       this.numberOfRooms = numberOfRooms; // this.numberOfRooms; would not be enough even though the property name is the same as the given parameter's  
       this.floor = floor;
-      this.location = location;
+      this.view = view;
       this.monthlyFee = monthlyFee;
       this.price = price;
    }
@@ -12,10 +12,10 @@ class House {
    }
 }
 
-function createHouse(numberOfRooms, floor, location, monthlyFee, price) { // this function is now regarded as a constructor function
+function createHouse(numberOfRooms, floor, view, monthlyFee, price) { // this function is now regarded as a constructor function
    this.numberOfRooms = numberOfRooms;
    this.floor = floor;
-   this.location = location;
+   this.view = view;
    this.monthlyFee = monthlyFee;
    this.price = price;
 };
@@ -24,8 +24,8 @@ createHouse.prototype.introduce = function () {
    console.log(this);
 };
 
-const house1 = new House(3, 2, 'N', 100, 5000);
+export const house1 = new House(3, 2, 'N', 100, 5000);
 const house2 = new createHouse(1, 2, 'S', 50, 7000);
 
-house1.introduce();
-house2.introduce();
+// house1.introduce();
+// house2.introduce();
